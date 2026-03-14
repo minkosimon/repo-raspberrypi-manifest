@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Copyright (C) 2020, RTE (http://www.rte-france.com) -->
+<!-- Copyright (C) 2023-2025 Savoir-faire Linux, Inc. -->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<manifest>
+  <!-- Remote repositories definition -->
+  <remote name="yocto" fetch="https://git.yoctoproject.org/git"/>
+  <remote name="github" fetch="https://github.com"/>
+  <remote name="rpi-custom-layer" fetch="https://github.com/minkosimon/repo-raspberrypi-manifest.git"/>
+  <remote name="oe" fetch="git://git.openembedded.org/meta-openembedded"/>
+
+
+  <!-- Upstream Yocto & OpenEmbedded Projects (dependencies for meta-raspberrypi) -->
+  <project remote="yocto" revision="kirkstone" name="poky" path="sources/poky"/>
+  <project remote="github" revision="kirkstone" name="openembedded/meta-openembedded" path="sources/meta-openembedded"/>
+  <project remote="yocto" revision="kirkstone" name="meta-virtualization" path="sources/meta-virtualization"/>
+  <project remote="yocto" revision="kirkstone" name="meta-dpdk" path="sources/meta-dpdk"/>
+  <project remote="yocto" revision="kirkstone" name="meta-intel" path="sources/meta-intel"/>
+  <project remote="yocto" revision="kirkstone" name="meta-security" path="sources/meta-security"/>
+  <project remote="yocto" revision="kirkstone" name="meta-selinux" path="sources/meta-selinux"/>
+  <project remote="yocto" revision="kirkstone" name="meta-cgl" path="sources/meta-cgl"/>
+  <project remote="yocto" revision="kirkstone" name="meta-cloud-services" path="sources/meta-cloud-services"/>
+
+  <!-- Custom Raspberry Pi Layer (minkosimon) -->
+  <project remote="github" revision="main" name="minkosimon/meta-raspberrypi-simpat" path="sources/meta-raspberrypi-simpat" upstream="main"/>
+
+  <!-- Meta-Raspberrypi and dependencies -->
+  <project remote="github" revision="kirkstone" name="agherzan/meta-raspberrypi" path="sources/meta-raspberrypi"/>
+  <project remote="github" revision="kirkstone" name="sbabic/meta-swupdate" path="sources/meta-swupdate"/>
+
+  </manifest>
